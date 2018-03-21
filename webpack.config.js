@@ -5,6 +5,9 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     // mode: 'development',
+    performance: {
+        hints: false
+    },
     resolve: {
         extensions: ['*', '.js', '.jsx', '.json', 'map']
     },

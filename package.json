@@ -3,6 +3,10 @@
     "version": "1.0.0",
     "description": "webpack-4-quickstart",
     "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jcscott2015/webpack-4-quickstart.git"
+    },
     "scripts": {
         "start": "webpack-dev-server --mode development --open",
         "build": "webpack --mode production",
