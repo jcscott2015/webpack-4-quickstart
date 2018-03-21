@@ -1,0 +1,11 @@
+http://www.christianalfoni.com/articles/2015_04_19_The-ultimate-webpack-setup
+
+https://github.com/christianalfoni/webpack-express-boilerplate
+
+https://www.valentinog.com/blog/webpack-4-tutorial/
+
+https://chariotsolutions.com/blog/post/configure-visual-studio-code-lint-react-jsx-syntax/
+
+Epoch Converter: https://www.epochconverter.com/
+
+JSON Parse: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse

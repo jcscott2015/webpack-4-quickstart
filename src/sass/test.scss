@@ -1,0 +1,11 @@
+$theme-font: sans-serif; 
+$themeColor-Light: #eaeaea;
+$themeColor-Dark: #c00;
+body {
+  font-family: $theme-font;
+  background-color: $themeColor-Light;
+  h1,
+  h2 {
+    color: $themeColor-Dark
+  }
+}

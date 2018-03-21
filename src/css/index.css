@@ -1,0 +1,14 @@
+/* @import 'reboot.css'; */
+
+
+/*body {
+  font-family: sans-serif;
+}*/
+
+h1 {
+  font-weight: bold;
+}
+
+div>h1 {
+  text-align: center;
+}
