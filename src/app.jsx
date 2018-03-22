@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 const App = () => {
   return (
     <div>
-      <h1>React here!</h1>
+      <h1>This is a React page.</h1>
     </div>
   );
 };
