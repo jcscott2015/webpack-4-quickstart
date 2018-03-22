@@ -59,6 +59,7 @@ typings/
 
 # Web app distribution directory
 dist/
+build/
 
 # Mac OS Stuff
 # General
@@ -68,7 +69,6 @@ dist/
 
 # Icon must end with two \r
 Icon
-
 
 # Thumbnails
 ._*
@@ -88,3 +88,23 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# React
+*~
+*.pyc
+_SpecRunner.html
+__benchmarks__
+remote-repo/
+coverage/
+flow-coverage/
+.module-cache
+fixtures/dom/public/react-dom.js
+fixtures/dom/public/react.js
+test/the-files-to-test.generated.js
+chrome-user-data
+*.sublime-project
+*.sublime-workspace
+.idea
+*.iml
+*.swp
+*.swo
