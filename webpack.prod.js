@@ -85,8 +85,7 @@ module.exports = merge(common, {
                             discardComments: {
                                 removeAll: true
                             }
-                        },
-                        modules: true
+                        }
                     }
                 }, {
                     loader: "sass-loader",

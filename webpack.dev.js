@@ -36,10 +36,7 @@ module.exports = merge(common, {
             exclude: /node_modules/,
             use: [
                 "style-loader", {
-                    loader: "css-loader",
-                    options: {
-                        modules: true
-                    }
+                    loader: "css-loader"
                 }, {
                     loader: "sass-loader",
                     options: {
