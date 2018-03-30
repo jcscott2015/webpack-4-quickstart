@@ -1,0 +1,10 @@
+$theme-font: QualcommWeb,
+Arial,
+sans-serif;
+$theme-font-weight: 400;
+$theme-font-smoothing: antialiased;
+body {
+  font-family: $theme-font;
+  font-weight: $theme-font-weight;
+  -webkit-font-smoothing: $theme-font-smoothing;
+}
