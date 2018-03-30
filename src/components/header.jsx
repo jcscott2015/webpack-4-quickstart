@@ -1,11 +1,6 @@
 /* eslint-disable no-console */
-
+// Components
 import React from 'react';
-import styled from 'styled-components';
-
-const HeaderComponent = styled.div`
-  margin-left: 120px;
-`;
 
 /**
  * Logos Component
@@ -76,10 +71,10 @@ class User extends React.Component {
  */
 const Header = () => {
   return (
-    <HeaderComponent>
+    <header>
       <Logos/>
       <User/>
-    </HeaderComponent>
+    </header>
   );
 };
 

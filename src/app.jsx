@@ -4,11 +4,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavSite from './components/nav-site';
 import Header from './components/header';
-import styled from 'styled-components';
-
-const Content = styled.div`
-  margin-left: 120px;
-`;
+import Dashboard from './components/dashboard';
+import { JobListView } from './components/job-list';
 
 /**
  * Main App Component
@@ -26,10 +23,10 @@ class App extends React.Component {
         <div>
           <NavSite />
           <Header />
-          <Content>
-            <Route exact path="/" render={() => <div>Dashboard</div>}/>
-            <Route path="/jobs" render={() => <div>Jobs</div>}/>
-          </Content>
+          <div className="content">
+            <Route exact path="/" component={Dashboard} />
+            <Route path="/jobs" component={JobListView} />
+          </div>
         </div>
       </Router>
     );
