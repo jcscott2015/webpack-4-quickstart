@@ -44,7 +44,8 @@ module.exports = merge(common, {
 
         // Create HTML file that includes reference to bundled JS.
         new HtmlWebpackPlugin({
-            title: 'Production',
+            favicon: './src/favicon.ico',
+            title: 'RUMI Portal',
             template: './src/index.html',
             filename: "./index.html",
             minify: {
