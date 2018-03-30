@@ -16,7 +16,7 @@ module.exports = merge(common, {
         // In production, publicPath needs to be "./" instead of "/".
         // publicPath: './',
         filename: 'js/[name].[chunkhash].js'
-        //chunkFilename: "[chunkhash].[id].chunk.js"
+            //chunkFilename: "[chunkhash].[id].chunk.js"
     },
     plugins: [
         new webpack.DefinePlugin({
@@ -29,9 +29,6 @@ module.exports = merge(common, {
             noInfo: true // set to false to see a list of every file being bundled.
         }),
 
-        // Generate an external css file with a hash in the filename
-        // new ExtractTextPlugin('css/[name].[contenthash].css'),
-
         /* Use CommonsChunkPlugin to create a separate bundle of vendor libraries so that they're cached separately. */
         // new webpack
         //   .optimize
@@ -42,12 +39,11 @@ module.exports = merge(common, {
             // Options similar to the same options in webpackOptions.output
             // both options are optional
             filename: "css/[name].[chunkhash].css"
-            // chunkFilename: "css/[id].css"
+                // chunkFilename: "css/[id].css"
         }),
 
         // Create HTML file that includes reference to bundled JS.
         new HtmlWebpackPlugin({
-            //   favicon: './src/favicon.ico',
             title: 'Production',
             template: './src/index.html',
             filename: "./index.html",
@@ -65,14 +61,7 @@ module.exports = merge(common, {
             },
             inject: true,
             xhtml: true
-            // Properties you define here are available in index.html using
-            // htmlWebpackPlugin.options.varName
-            //   trackJSToken: 'INSERT YOUR TOKEN HERE'
         })
-
-        // new CopyWebpackPlugin([
-        //   { from: './src/favicons', to: './favicons/' }
-        // ])
     ],
     module: {
         rules: [{
@@ -85,21 +74,10 @@ module.exports = merge(common, {
                 }
             }
         }, {
-            test: /\.(png|jpg|svg)$/,
-            exclude: /node_modules/,
-            use: {
-                loader: 'url-loader',
-                options: {
-                    limit: 15000,
-                    name: 'img/[name].[ext]'
-                }
-            },
-        }, {
             test: /(\.css|\.scss|\.sass)$/,
             exclude: /node_modules/,
             use: [
-                MiniCssExtractPlugin.loader,
-                {
+                MiniCssExtractPlugin.loader, {
                     loader: "css-loader",
                     options: {
                         minimize: {
@@ -117,6 +95,31 @@ module.exports = merge(common, {
                     }
                 }
             ]
+        }, {
+            test: /\.(ttf|eot|woff|woff2|svg)$/,
+            exclude: [
+                path.resolve(__dirname, "node_modules"),
+                path.resolve(__dirname, "src/img")
+            ],
+            use: {
+                loader: 'file-loader',
+                options: {
+                    name: "fonts/[name].[ext]",
+                },
+            }
+        }, {
+            test: /\.(png|jp(e*)g|svg)$/,
+            exclude: [
+                path.resolve(__dirname, "node_modules"),
+                path.resolve(__dirname, "src/fonts")
+            ],
+            use: {
+                loader: 'url-loader',
+                options: {
+                    limit: 8000,
+                    name: 'img/[hash]-[name].[ext]'
+                }
+            }
         }]
     }
 });

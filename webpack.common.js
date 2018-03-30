@@ -1,5 +1,6 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     resolve: {
@@ -12,7 +13,15 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     plugins: [
-        new CleanWebpackPlugin(['dist'])
+        new CleanWebpackPlugin(['dist']),
+
+        new CopyWebpackPlugin([{
+            from: './src/img',
+            to: './img/'
+        }, {
+            from: './src/img/icons',
+            to: './img/icons/'
+        }])
     ],
     module: {
         rules: [{
@@ -31,12 +40,6 @@ module.exports = {
                     minimize: true
                 }
             }]
-        }, {
-            test: /\.(png|jpg|svg)$/,
-            exclude: /node_modules/,
-            use: {
-                loader: 'file-loader'
-            }
         }]
     }
 };

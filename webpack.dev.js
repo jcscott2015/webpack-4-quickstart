@@ -41,6 +41,24 @@ module.exports = merge(common, {
                         includePaths: [path.resolve(__dirname, './src', './src/sass')],
                         sourceMap: true
                     }
+                }, {
+                    test: /\.(png|jp(e*)g|svg)$/,
+                    exclude: [
+                        path.resolve(__dirname, "node_modules"),
+                        path.resolve(__dirname, "src/fonts")
+                    ],
+                    use: {
+                        loader: 'file-loader'
+                    }
+                }, {
+                    test: /\.(ttf|eot|woff|woff2|svg)$/,
+                    exclude: [
+                        path.resolve(__dirname, "node_modules"),
+                        path.resolve(__dirname, "src/img")
+                    ],
+                    use: {
+                        loader: 'file-loader'
+                    }
                 }
             ]
         }]
